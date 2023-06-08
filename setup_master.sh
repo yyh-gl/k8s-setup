@@ -1,6 +1,6 @@
 # Create cluster
 echo 'Create cluster'
-sudo kubeadm init --control-plane-endpoint=<Master node IP>:6443 --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init --apiserver-advertise-address=<Master node IP> --pod-network-cidr=10.244.0.0/16
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
